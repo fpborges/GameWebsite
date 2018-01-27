@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>FpbLadE Games</title>
+	<link rel="stylesheet" href="styles/normalize.css">
+	<link rel="stylesheet" href="styles/feedback.css">
+	<link rel="shortcut icon" href="images/logofavicon.ico" type="image/x-icon" />
+	
+	<style type="text/css">
+body {
+
+}
+</style>
+<!--This is a reference from https://css-tricks.com/how-to-resizeable-background-image/-->
+<script type="text/javascript">
+
+var num;
+var temp=0;
+var speed=10000; /* this is set for 5 seconds, edit value to suit requirements */
+var preloads=[];
+
+/* add any number of images here */
+
+preload(
+'images/bg1.jpg',
+'images/bg2.jpg',
+'images/bg3.jpg',
+'images/bg4.jpg',
+'images/bg5.jpg',
+'images/bg6.jpg',
+'images/bg7.jpg'
+);
+
+function preload(){
+
+for(var c=0;c<arguments.length;c++) {
+preloads[preloads.length]=new Image();
+preloads[preloads.length-1].src=arguments[c];
+}
+}
+
+function rotateImages() {
+num=Math.floor(Math.random()*preloads.length);
+if(num==temp){
+rotateImages();
+}
+else {
+document.body.style.backgroundImage='url('+preloads[num].src+')';
+temp=num;
+
+setTimeout(function(){rotateImages()},speed);
+}
+}
+
+if(window.addEventListener){
+window.addEventListener('load',rotateImages,false);
+}
+else { 
+if(window.attachEvent){
+window.attachEvent('onload',rotateImages);
+}
+}
+</script>
+</head>
+
+
+
+<body id="body" onload="func()">
+  <header>
+  	<img src="images/logo.ico" alt="Logo" width="85">
+   	<h2>FpbLadE Games</h2>
+   	<h3>For people who love games!!</h3>
+  </header>
+  <nav id="nav_menu">
+  	<ul>
+    	<li><a href="index.html">Home</a></li>
+    	<li><a href="table.html">Games List</a>
+			<ul>
+    			<li><a href="decorating/outdoor.html">Action</a>
+				<ul>
+					<li>Assassin's creed</li>
+					<li>Hitman Absolution</li>
+					<li>Medal of Honor</li>
+				</ul>
+				</li>
+    			<li><a href="decorating/indoor.html">MMO</a></li>
+    			<li><a href="decorating/table.html">Strategy</a></li>
+    			<li><a href="decorating/treats.html">Sports</a></li>
+			</ul>
+		</li>
+    	<li><a href="pics.html">Images</a></li>
+    	<li><a href="video.html">Videos</a></li>
+    	<li><a href="feedback.html"class="current">Feedback</a></li>
+	</ul>
+  </nav>
+  <main>
+	<aside>
+		<nav id="nav_list">
+   		<ul>
+   			<li><a href="pics.html">Favorite Games</a></li>
+   			<li><a href="table.html">Top Game List</a></li>
+   			<li><a href="video.html">Latest Releases</a></li>
+   			<li><a href="index.html">Plataform</a></li>
+		</ul>
+		</nav>
+	</aside>
+	<section>
+    	<div class="myform1">
+<h2>Feedback Us</h2>
+<p>Please complete the information below and click Submit, Thank you!</p>
+
+<form action="index.html" method="post">
+<div class="myform2">
+<input type="hidden" name="required" value="name,phone,email" />
+<input type="hidden" name="title" value="Thank you for your time" />
+<input type="hidden" name="return_link_url" value="index.html" />
+<input type="hidden" name="return_link_title" value="index.html"/>
+
+<label for="name1">Name:</label><br />
+<span><input type="text" name="name" id="name1" size="30" /></span><br /><br />
+
+<label for="phone2">Phone:</label><br />
+<span><input type="text" name="phone" id="phone2" size="15" /></span><br /><br />
+
+<label for="email3">E-mail address:</label><br />
+<span><input type="text" name="email" id="email3" size="25" /></span><br /><br />
+
+Wha do you think about my website:<br><br>
+
+    <label>
+        <input type="checkbox" name="funny" value="fun">
+        Fun<br>
+    </label>
+    
+    <label>
+        <input type="checkbox" name="info" value="informative">
+        Informative<br>
+    </label>
+    
+    <label>
+        <input type="checkbox" name="type" value="color">
+        Uses good color<br>
+    </label>
+    <label>
+        <input type="checkbox" name="design" value="designed">
+        Well Designed<br>
+    </label>
+
+<br>
+Will you visit my website again?<br>
+
+    <label>
+        <input type="radio" name="visitAnswer" id="agreed" value="yes" checked>
+        Yes<br>
+    </label>
+
+    <label>
+        <input type="radio" name="visitAnswer" id="disagreed" value="no">
+        No<br>
+    </label>
+
+
+<br>
+<label for="comments3">COMMENTS:</label><br />
+<span><textarea name="comments" id="comments3" rows="4" cols="45"></textarea></span><br /><br />
+
+<span><input type="reset" value="RESET" />
+
+<button onclick="myFunction()">Submit</button>
+    </span>
+<script>
+function myFunction() {
+    alert("Your answers has been submited - Thank You!!");
+}
+</script>
+   
+</div>
+</form>
+
+</div>
+
+
+<br>
+<br>
+	
+	</section>
+	<aside id="right_nav">
+<h5 align="center">Our official facebook:</h5>
+<a href="http://www.facebook.com/ferviporai">
+<img src="images/facebook_logo.png" alt="facebook" width="85" height="19" border="0" align=center>
+</a>
+    </aside>
+  </main>
+
+  <footer>
+	<p>&copy; 2016 Fernando Borges</p>
+  </footer>
+</body>
+</html>

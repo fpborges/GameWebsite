@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>FpbLadE Games</title>
+	<link rel="stylesheet" href="/styles/normalize.css">
+	<link rel="stylesheet" href="styles/pics.css">
+	<link rel="shortcut icon" href="images/logofavicon.ico" type="image/x-icon" />
+	
+	<style type="text/css">
+body {
+
+}
+</style>
+<!--This is a reference from https://css-tricks.com/how-to-resizeable-background-image/-->
+<script type="text/javascript">
+
+var num;
+var temp=0;
+var speed=10000; /* this is set for 5 seconds, edit value to suit requirements */
+var preloads=[];
+
+/* add any number of images here */
+
+preload(
+'images/bg1.jpg',
+'images/bg2.jpg',
+'images/bg3.jpg',
+'images/bg4.jpg',
+'images/bg5.jpg',
+'images/bg6.jpg',
+'images/bg7.jpg'
+);
+
+function preload(){
+
+for(var c=0;c<arguments.length;c++) {
+preloads[preloads.length]=new Image();
+preloads[preloads.length-1].src=arguments[c];
+}
+}
+
+function rotateImages() {
+num=Math.floor(Math.random()*preloads.length);
+if(num==temp){
+rotateImages();
+}
+else {
+document.body.style.backgroundImage='url('+preloads[num].src+')';
+temp=num;
+
+setTimeout(function(){rotateImages()},speed);
+}
+}
+
+if(window.addEventListener){
+window.addEventListener('load',rotateImages,false);
+}
+else { 
+if(window.attachEvent){
+window.attachEvent('onload',rotateImages);
+}
+}
+</script>
+</head>
+
+
+
+<body id="body" onload="func()">
+  <header>
+  	<img src="images/logo.ico" alt="Logo" width="85">
+   	<h2>FpbLadE Games</h2>
+   	<h3>For people who love games!!</h3>
+  </header>
+  <nav id="nav_menu">
+  	<ul>
+    	<li><a href="index.html" class="current">Home</a></li>
+    	<li><a href="products/index.html">Games List</a>
+			<ul>
+    			<li><a href="decorating/outdoor.html">Action</a>
+				<ul>
+					<li>Assassin's creed</li>
+					<li>Hitman Absolution</li>
+					<li>Medal of Honor</li>
+				</ul>
+				</li>
+    			<li><a href="decorating/indoor.html">MMO</a></li>
+    			<li><a href="decorating/table.html">Strategy</a></li>
+    			<li><a href="decorating/treats.html">Sports</a></li>
+			</ul>
+		</li>
+    	<li><a href="pages/pics.html">Images</a></li>
+    	<li><a href="decorating/index.html">Videos</a></li>
+    	<li><a href="email.html">Feedback</a></li>
+	</ul>
+  </nav>
+  <main>
+	<aside>
+		<nav id="nav_list">
+   		<ul>
+   			<li><a href="products/props.html">Favorite Games</a></li>
+   			<li><a href="products/costumes.html">Top Game List</a></li>
+   			<li><a href="products/special.html">Latest Releases</a></li>
+   			<li><a href="products/masks.html">Plataform</a></li>
+		</ul>
+		</nav>
+	</aside>
+	<section>
+    	<h1>Welcome to the best gaming website<br>Please come in and enjoy!!.</h1>
+		<br><p>This web page is for people with all ages that
+		<br>love games and want learn more about.</br></p>
+    	<br>
+		
+    	
+    	<h2>Game of the week</h2>
+		<h5>Hearthstone!</h5>
+		<img src="images/hearthstone.jpg" alt="hearthstone" width="180" height="120" border="0">
+	
+	</section>
+	<aside id="right_nav">
+<h5 align="center">Our official facebook:</h5>
+<a href="http://www.facebook.com/ferviporai">
+<img src="images/facebook_logo.png" alt="facebook" width="85" height="19" border="0" align=center>
+</a>
+    </aside>
+  </main>
+
+  <footer>
+	<p>&copy; 2016 Fernando Borges</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>FpbLadE Games</title>
+	<link rel="stylesheet" href="styles/normalize.css">
+	<link rel="stylesheet" href="styles/pics.css">
+	<link rel="shortcut icon" href="images/logofavicon.ico" type="image/x-icon" />
+	
+	<style type="text/css">
+body {
+
+}
+</style>
+<!--This is a reference from https://css-tricks.com/how-to-resizeable-background-image/-->
+<script type="text/javascript">
+
+var num;
+var temp=0;
+var speed=10000; /* this is set for 5 seconds, edit value to suit requirements */
+var preloads=[];
+
+/* add any number of images here */
+
+preload(
+'images/bg1.jpg',
+'images/bg2.jpg',
+'images/bg3.jpg',
+'images/bg4.jpg',
+'images/bg5.jpg',
+'images/bg6.jpg',
+'images/bg7.jpg'
+);
+
+function preload(){
+
+for(var c=0;c<arguments.length;c++) {
+preloads[preloads.length]=new Image();
+preloads[preloads.length-1].src=arguments[c];
+}
+}
+
+function rotateImages() {
+num=Math.floor(Math.random()*preloads.length);
+if(num==temp){
+rotateImages();
+}
+else {
+document.body.style.backgroundImage='url('+preloads[num].src+')';
+temp=num;
+
+setTimeout(function(){rotateImages()},speed);
+}
+}
+
+if(window.addEventListener){
+window.addEventListener('load',rotateImages,false);
+}
+else { 
+if(window.attachEvent){
+window.attachEvent('onload',rotateImages);
+}
+}
+</script>
+</head>
+
+<body id="body" onload="func()">
+  <header>
+  	<img src="images/logo.ico" alt="Logo" width="85">
+   	<h2>FpbLadE Games</h2>
+   	<h3>For people who love games!!</h3>
+  </header>
+  <nav id="nav_menu">
+  	<ul>
+    	<li><a href="index.html">Home</a></li>
+    	<li><a href="table.html">Games List</a>
+			<ul>
+    			<li><a href="http://armorgames.com/category/action" target="_blank">Action</a>
+				<ul>
+					<li>Assassin's creed</li>
+					<li>Hitman Absolution</li>
+					<li>Medal of Honor</li>
+				</ul>
+				</li>
+    			<li><a href="http://armorgames.com/category/mmo-games" target="_blank">MMO</a></li>
+    			<li><a href="http://armorgames.com/category/strategy" target="_blank">Strategy</a></li>
+    			<li><a href="http://armorgames.com/category/sports" target="_blank">Sports</a></li>
+			</ul>
+		</li>
+    	<li><a href="pics.html" class="current">Images</a></li>
+    	<li><a href="video.html">Videos</a></li>
+    	<li><a href="feedback.html">Feedback</a></li>
+	</ul>
+  </nav>
+  <main>
+	<aside>
+		<nav id="nav_list">
+   		<ul>
+   			<li><a href="pics.html">Favorite Games</a></li>
+   			<li><a href="table.html">Top Game List</a></li>
+   			<li><a href="video.html">Latest Releases</a></li>
+   			<li><a href="index.html">Plataform</a></li>
+		</ul>
+		</nav>
+	</aside>
+	<section>
+	<br>
+	<br>
+    	<h1>Teake a look at our Wallpapers images<br>Click and enjoy!!.</h1>
+		<br><p>These wallpapers are relative the most exciting games.
+		<br>Use this for your own and enjoy:</br></p>
+    	<br>
+		<a href="images/bg1.jpg" target="_blank"> <img height=80 width=100 SRC="images/bg1.jpg" alt= "assassins creed"></a>
+		<a href="images/bg4.jpg" target="_blank"> <img height=80 width=100 SRC="images/bg4.jpg" alt= "crysis"></a>
+		<br>
+		<a href="images/bg6.jpg" target="_blank"> <img height=80 width=100 SRC="images/bg6.jpg" alt= "batman"></a>
+		<a href="images/bg5.jpg" target="_blank"> <img height=80 width=100 SRC="images/bg5.jpg" alt= "assassins creed 2"></a>
+		<br>
+		
+    	
+	</section>
+	<aside id="right_nav">
+<h5 align="center">Our official facebook:</h5>
+<a href="http://www.facebook.com/ferviporai">
+<img src="images/facebook_logo.png" alt="facebook" width="85" height="19" border="0" align=center>
+</a>
+    </aside>
+  </main>
+
+  <footer>
+	<p>&copy; 2016 Fernando Borges</p>
+  </footer>
+</body>
+</html>
